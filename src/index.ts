@@ -25,7 +25,7 @@ async function storeData(data: any[]) {
         const currentDate = new Date();
         for (const item of data) {
             const existing = await collection.findOne({ tokenAddress: item.tokenAddress });
-            if (!existing) {
+            if (!existing && item.chainId === "solana" ) {
                 item.runstatus = 0;
                 item.createdAt = currentDate;
                 item.updatedAt = currentDate;
