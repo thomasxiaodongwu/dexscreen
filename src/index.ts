@@ -32,7 +32,7 @@ async function storeData(data: any[]) {
                 await collection.insertOne(item);
                 console.log(`Inserted: ${item.tokenAddress}`);
             } else {
-                console.log(`Skipped: ${item.tokenAddress}`);
+                //console.log(`Skipped: ${item.tokenAddress}`);
             }
         }
     } catch (error) {
@@ -49,7 +49,7 @@ async function main() {
         if (data) {
             await storeData(data);
         }
-    }, 2000);
+    }, 5000);
 }
 
 main().catch(console.error);
